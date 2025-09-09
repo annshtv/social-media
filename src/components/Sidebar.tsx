@@ -14,6 +14,7 @@ import {
   FaChartBar,
   FaSignOutAlt,
 } from "react-icons/fa";
+import ava from "../pictures/Rectangle 7.png"
 
 function Sidebar() {
   return (
@@ -22,7 +23,7 @@ function Sidebar() {
         <Avatar
           size="xl"
           name="Steve Rogers"
-          src="../../Rectangle 7.png"
+          src={ava}
           borderRadius="20px"
         />
         <Text fontWeight="bold" fontSize="18px">

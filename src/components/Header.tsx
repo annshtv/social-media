@@ -14,7 +14,8 @@ import {
   BellIcon,
   InfoOutlineIcon,
 } from "@chakra-ui/icons";
-import img from "../../Rectangle 5.png";
+import avatar from "../pictures/Group 29.png";
+import avatar2 from "../pictures/Rectangle 5.png"
 
 function Header() {
   return (
@@ -26,7 +27,7 @@ function Header() {
       py="10px"
     >
       <Box>
-        <Image src={img} boxSize="45px" borderRadius="md" />
+        <Image src={avatar2} boxSize="45px" borderRadius="md" />
       </Box>
       <Flex
         align="center"
@@ -47,7 +48,7 @@ function Header() {
       </Flex>
       <HStack spacing="20px">
         <HStack spacing="3">
-          <Avatar size="md" name="Steve Rogers" src="../../Group 29.png" />
+          <Avatar size="md" name="Steve Rogers" src={avatar} />
           <Box lineHeight="short">
             <Text fontWeight="bold" fontSize="15px">
               Steve Rogers

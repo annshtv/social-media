@@ -1,8 +1,8 @@
 import { Flex, Textarea, Text, Image } from '@chakra-ui/react'
 
-import image from  "../../image.png"
-import image1 from  "../../image1.png"
-import image2 from  "../../image2.png"
+import image from  "../pictures/image.png"
+import image1 from  "../pictures/image1.png"
+import image2 from  "../pictures/image2.png"
 
 function PostsPanel() {
   return (

@@ -9,12 +9,12 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 
-import img from "../../img.png";
-import img1 from "../../img1.png";
-import img2 from "../../img2.png";
-import img3 from "../../img3.png";
-import img4 from "../../img4.png";
-import img5 from "../../img5.png";
+import img from "../pictures/img.png";
+import img1 from "../pictures/img1.png";
+import img2 from "../pictures/img2.png";
+import img3 from "../pictures/img3.png";
+import img4 from "../pictures/img4.png";
+import img5 from "../pictures/img5.png";
 
 function SocialPanel() {
   return (
