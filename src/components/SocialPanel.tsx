@@ -30,7 +30,7 @@ function SocialPanel() {
         >
           <Flex width="288px" flexDirection="column">
             <Text color="#FF5A60">People you may know</Text>
-            <Flex height="70px" justifyContent="space-between" fontSize="14px">
+            <Flex height="70px" justifyContent="space-between" fontSize="14px" gap="15px">
               <Image src={img} width="70px"></Image>
               <Flex flexDirection="column">
                 <Text>Tony Stark</Text>
@@ -48,6 +48,8 @@ function SocialPanel() {
               borderBottom="solid 1px #0F191A40"
               marginBottom="10px"
               marginTop="10px"
+              gap="15px"
+              paddingBottom="30px"
             >
               <Image src={img1} width="70px" height="70px"></Image>
               <Flex flexDirection="column">
