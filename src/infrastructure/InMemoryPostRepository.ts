@@ -1,9 +1,9 @@
-import { Post } from '../domain/Posts';
-import { PostRepository } from '../domain/PostRepository';
+import type { Post } from '../domain/Posts';
+import type { PostRepository } from '../domain/PostRepository';
 import tonyAvatar from '../pictures/image.png';
 import paulAvatar from '../pictures/user1.png';
 
-const posts: Post[] = [
+let posts: Post[] = [
   {
     id: 'post-1',
     author: {
@@ -31,5 +31,8 @@ const posts: Post[] = [
 export const inMemoryPostRepository: PostRepository = {
   findAll(): Post[] {
     return posts;
+  },
+  add(post: Post): void {
+    posts = [post, ...posts];
   }
 };
