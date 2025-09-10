@@ -5,7 +5,6 @@ import {
   Text,
   Heading,
   HStack,
-  IconButton,
 } from "@chakra-ui/react";
 import { SettingsIcon, LockIcon } from "@chakra-ui/icons";
 import {
@@ -14,21 +13,35 @@ import {
   FaChartBar,
   FaSignOutAlt,
 } from "react-icons/fa";
-import ava from "../pictures/Rectangle 7.png"
+import type { User } from "../domain/User";
 
-function Sidebar() {
+
+
+type UserPanelProps = {
+  user: User;
+};
+
+function UserPanel({ user }: UserPanelProps) {
   return (
     <Box bg="white" w="250px" minH="100vh" p="20px">
-      <VStack spacing="3" mb="8">
+     <VStack spacing="3" mb="8">
         <Avatar
           size="xl"
-          name="Steve Rogers"
-          src={ava}
+          name={user.name}
+          src={user.avatarUrl}
           borderRadius="20px"
         />
         <Text fontWeight="bold" fontSize="18px">
-          Steve Rogers
+          {user.name}
         </Text>
+        <Text fontSize="sm" color="gray.500">
+          @{user.handle}
+        </Text>
+        {user.bio && (
+          <Text fontSize="sm" textAlign="center" color="gray.600">
+            {user.bio}
+          </Text>
+        )}
       </VStack>
       <Box mb="6">
         <Heading size="sm" color="red.400" mb="3">
@@ -88,4 +101,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default UserPanel;

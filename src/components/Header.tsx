@@ -16,6 +16,10 @@ import {
 } from "@chakra-ui/icons";
 import avatar from "../pictures/Group 29.png";
 import avatar2 from "../pictures/Rectangle 5.png"
+import settings from "../pictures/settings.png"
+import lamp from "../pictures/lamp.png"
+import notification from "../pictures/notification.png"
+
 
 function Header() {
   return (
@@ -61,12 +65,12 @@ function Header() {
         <HStack spacing="10px">
           <IconButton
             aria-label="Custom Icon"
-            icon={<Image src="../../Group 3.png" boxSize="18px" />}
+            icon={<Image src={settings} boxSize="25px" />}
           />
 
           <IconButton
             aria-label="Custom Icon"
-            icon={<Image src="../../Group 4.png" boxSize="18px" />}
+            icon={<Image src={lamp} boxSize="18px" />}
             borderRadius="md"
             bg="white"
             size="sm"
@@ -74,7 +78,7 @@ function Header() {
 
           <IconButton
             aria-label="Custom Icon"
-            icon={<Image src="../../Group 5.png" boxSize="18px" />}
+            icon={<Image src={notification} boxSize="18px" />}
             borderRadius="md"
             bg="white"
             size="sm"

@@ -1,23 +1,26 @@
 import { Flex } from "@chakra-ui/react";
 import Header from "../components/Header";
-import PostPanel from "../components/PostsPanel";
-import SocialPanel from "../components/Sidebar";
-import UserPanel from "../components/SocialPanel";
+import PostsPanel from "../components/PostsPanel"; 
+import SocialPanel from "../components/SocialPanel";
+import UserPanel from "../components/UserPanel";
 
 import { inMemoryPostRepository } from '../infrastructure/InMemoryPostRepository';
 import { getFeedPosts } from '../application/getFeedPosts';
-import Sidebar from "../components/Sidebar";
+import { getCurrentUser } from "../application/getCurrentUser";
+import { inMemoryUserRepository } from "../infrastructure/InMemoryUserRepository";
+
 
 function MainPage() {
   const posts = getFeedPosts(inMemoryPostRepository);
+  const currentUser = getCurrentUser(inMemoryUserRepository);
 
   return (
     <Flex flexDirection="column">
       <Header />
       <Flex>
-        <Sidebar />
-        <PostPanel posts={posts} />
-        <UserPanel />
+        <UserPanel user={currentUser} />
+        <PostsPanel posts={posts} />
+        <SocialPanel /> 
       </Flex>
     </Flex>
   );

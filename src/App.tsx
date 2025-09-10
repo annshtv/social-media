@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react"
 import Header from "./components/Header"
-import Sidebar from "./components/Sidebar"
+import Sidebar from "./components/UserPanel"
 import SocialPanel from "./components/SocialPanel"
 import MainPage from "./pages/MainPage"
 

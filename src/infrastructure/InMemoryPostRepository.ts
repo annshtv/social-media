@@ -1,7 +1,7 @@
 import { Post } from '../domain/Posts';
 import { PostRepository } from '../domain/PostRepository';
-import tonyAvatar from '../pictures/Rectangle 10 (3).png';
-import paulAvatar from '../pictures/Rectangle 7.png';
+import tonyAvatar from '../pictures/image.png';
+import paulAvatar from '../pictures/user1.png';
 
 const posts: Post[] = [
   {
