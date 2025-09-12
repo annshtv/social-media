@@ -1,5 +1,5 @@
-import { PostRepository } from '../domain/PostRepository';
-import { Post } from '../domain/Posts';
+import type { PostRepository } from '../domain/PostRepository';
+import type { Post } from '../domain/Posts';
 
 export const getFeedPosts = (postRepository: PostRepository): Post[] => {
  

@@ -13,7 +13,7 @@ let posts: Post[] = [
       avatarUrl: tonyAvatar,
       bio: 'dancer'
     },
-    text: 'Looking for an amazing scientist who knows how to build a suit that can fly high in the sky without any problem.',
+    text: 'Looking for an amazing scientist...',
   },
   {
     id: 'post-2',
@@ -22,9 +22,9 @@ let posts: Post[] = [
       name: 'Paul Rudd',
       handle: '@antman_wasp',
       avatarUrl: paulAvatar,
-      bio: 'Smallest creature in this beautiful universe | Flying in colo....'
+      bio: 'Smallest creature in this beautiful universe...'
     },
-    text: 'This is another post text here. You can add more details.'
+    text: 'This is another post text here.',
   }
 ];
 
@@ -34,5 +34,8 @@ export const inMemoryPostRepository: PostRepository = {
   },
   add(post: Post): void {
     posts = [post, ...posts];
+  },
+  remove(id: string): void {
+    posts = posts.filter((p) => p.id !== id); 
   }
 };

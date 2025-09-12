@@ -13,21 +13,28 @@ function PostPanel({ posts }: PostPanelProps) {
 
   const handleAddPost = () => {
     if (!newPostText.trim()) return;
+
     const newPost: Post = {
       id: `post-${Date.now()}`,
       author: {
         id: "user-3",
         name: "New User",
-        handle: "@newUser",
-        avatarUrl: "../pictures/avatar.png",
+        handle: "@newbie",
+        avatarUrl: "/pictures/avatar.png",
         bio: "Just joined!",
+        isNew:true,
       },
       text: newPostText,
     };
 
     inMemoryPostRepository.add(newPost);
     setPostList([...inMemoryPostRepository.findAll()]);
-    setNewPostText(""); 
+    setNewPostText("");
+  };
+
+  const handleDeletePost = (id: string) => {
+    inMemoryPostRepository.remove(id);
+    setPostList([...inMemoryPostRepository.findAll()]);
   };
 
   return (
@@ -53,7 +60,6 @@ function PostPanel({ posts }: PostPanelProps) {
             Add Post
           </Button>
         </Flex>
-
         {postList.map((post) => (
           <Flex
             key={post.id}
@@ -62,20 +68,25 @@ function PostPanel({ posts }: PostPanelProps) {
             padding="24px"
             flexDirection="column"
           >
-            <Flex gap="20px" alignItems="center">
-              <Image
-                src={post.author.avatarUrl}
-                width="70px"
-                height="70px"
-                borderRadius="md"
-              />
-              <Flex flexDirection="column">
-                <Flex gap="30px">
-                  <Text fontWeight="bold">{post.author.name}</Text>
-                  <Text color="#0F191A80">{post.author.handle}</Text>
+            <Flex justify="space-between" align="center">
+              <Flex gap="20px" alignItems="center">
+                <Image
+                  src={post.author.avatarUrl}
+                  width="70px"
+                  height="70px"
+                  borderRadius="md"
+                />
+                <Flex flexDirection="column">
+                  <Flex gap="30px">
+                    <Text fontWeight="bold">{post.author.name}</Text>
+                    <Text color="#0F191A80">{post.author.handle}</Text>
+                  </Flex>
+                  <Text fontSize="sm">{post.author.bio}</Text>
                 </Flex>
-                <Text fontSize="sm">{post.author.bio}</Text>
               </Flex>
+              <Button colorScheme="red" size="sm" onClick={() => handleDeletePost(post.id)}>
+                Delete
+              </Button>
             </Flex>
             <Flex
               flexDirection="column"

@@ -4,6 +4,7 @@ export type User = {
   handle: string; 
   avatarUrl: string;
   bio?: string; 
+  isNew:boolean;
 };
 
 const user1: User = {
