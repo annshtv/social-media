@@ -7,7 +7,8 @@ const currentUser: User = {
   name: 'Steve Rogers',
   handle: 'steve_rogers',
   avatarUrl: userAvatar,
-  bio: ''
+  bio: '',
+  isNew: false
 };
 
 export const inMemoryUserRepository: UserRepository = {

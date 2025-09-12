@@ -7,7 +7,7 @@ export type User = {
   isNew:boolean;
 };
 
-const user1: User = {
+const user: User = {
   id: "1",
   name: "Capitan America",
   handle: "captain_america",

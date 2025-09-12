@@ -14,6 +14,7 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import type { User } from "../domain/User";
+import { useAuth } from "../application/AuthContext";
 
 
 
@@ -22,6 +23,7 @@ type UserPanelProps = {
 };
 
 function UserPanel({ user }: UserPanelProps) {
+  const { userLogout, logout } = useAuth();
   return (
     <Box bg="white" w="250px" minH="100vh" p="20px">
      <VStack spacing="3" mb="8">
@@ -92,7 +94,7 @@ function UserPanel({ user }: UserPanelProps) {
           <Box bg="red.400" p="2" borderRadius="md" color="white">
             <FaSignOutAlt />
           </Box>
-          <Text color="red.500" fontWeight="bold">
+          <Text color="red.500" fontWeight="bold" onClick={logout}>
             Log out
           </Text>
         </HStack>
