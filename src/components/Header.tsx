@@ -19,9 +19,15 @@ import avatar2 from "../pictures/Rectangle 5.png"
 import settings from "../pictures/settings.png"
 import lamp from "../pictures/lamp.png"
 import notification from "../pictures/notification.png"
+import { useNavigate } from "react-router";
 
 
 function Header() {
+  const navigate = useNavigate();
+
+  const goToprofile = () => {
+    navigate('/account');
+  };
   return (
     <Flex
       bg="#A9DEF9"
@@ -52,7 +58,7 @@ function Header() {
       </Flex>
       <HStack spacing="20px">
         <HStack spacing="3">
-          <Avatar size="md" name="Steve Rogers" src={avatar} />
+          <Avatar size="md" name="Steve Rogers" src={avatar} onClick={goToprofile} />
           <Box lineHeight="short">
             <Text fontWeight="bold" fontSize="15px">
               Steve Rogers

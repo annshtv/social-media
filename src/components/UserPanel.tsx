@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import type { User } from "../domain/User";
 import { useAuth } from "../application/AuthContext";
+import { useNavigate } from "react-router";
 
 
 
@@ -23,6 +24,11 @@ type UserPanelProps = {
 };
 
 function UserPanel({ user }: UserPanelProps) {
+   const navigate = useNavigate();
+
+  const goToprofile = () => {
+    navigate('/account');
+  };
   const { userLogout, logout } = useAuth();
   return (
     <Box bg="white" w="250px" minH="100vh" p="20px">
@@ -31,7 +37,7 @@ function UserPanel({ user }: UserPanelProps) {
           size="xl"
           name={user.name}
           src={user.avatarUrl}
-          borderRadius="20px"
+          borderRadius="20px" onClick={goToprofile}
         />
         <Text fontWeight="bold" fontSize="18px">
           {user.name}
@@ -54,7 +60,7 @@ function UserPanel({ user }: UserPanelProps) {
             <Box bg="#A9DEF9" p="2" borderRadius="md">
               <FaUser />
             </Box>
-            <Text>Profile</Text>
+            <Text onClick={goToprofile}>Profile</Text>
           </HStack>
           <HStack>
             <Box bg="#A9DEF9" p="2" borderRadius="md">
